@@ -361,6 +361,7 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.08; font-weight: 600;
 .tl-date  { font-family: var(--font-mono); font-size: 13px; color: var(--green-ink); }
 .tl-title { font-weight: 600; }
 .tl-place { color: var(--text-muted); font-size: 15.5px; }
+.tl-note  { color: var(--gray); font-size: 14px; font-style: italic; margin-top: 2px; }
 .skill-list { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-list li { background: var(--surface); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 15px; }
 .status-tag {
