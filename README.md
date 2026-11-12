@@ -78,3 +78,15 @@ Then open http://127.0.0.1:8000.
 2. Push these files to its `main` branch.
 3. In the repository: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch `main`, folder `/ (root)`.
 4. After 1–2 minutes the site is live at `https://<your-username>.github.io`.
+
+## Credits
+
+University logos are trademarks of their universities and are used only to show affiliation.
+
+- `assets/img/logos/university-of-utah.png`: cropped (block U only) from
+  [University of Utah Horizontal BRR Logo.png](https://commons.wikimedia.org/wiki/File:University_of_Utah_Horizontal_BRR_Logo.png)
+  by Colbyjjensen, Wikimedia Commons, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0).
+- `assets/img/logos/shanghaitech-emblem.svg`: ShanghaiTech University emblem, © ShanghaiTech University
+  (source: [shanghaitech.edu.cn](https://www.shanghaitech.edu.cn/), file via
+  [Wikipedia](https://en.wikipedia.org/wiki/File:ShanghaiTech_University_Emblem.svg), where it is non-free).
+  Shown only to indicate the degrees earned there.

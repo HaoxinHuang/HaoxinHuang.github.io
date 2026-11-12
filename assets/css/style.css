@@ -314,6 +314,9 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.08; font-weight: 600;
 .pub-title { font-size: 1.1rem; line-height: 1.4; font-weight: 600; margin: 0 0 6px; }
 .pub-authors, .pub-venue { margin: 0; font-size: 15.5px; color: var(--text-muted); }
 .pub-authors .me { color: var(--text); font-weight: 600; }
+/* Co-author links: same color as the text, marked by a dotted underline */
+.pub-authors a.author { color: inherit; text-decoration: underline dotted var(--gray); text-underline-offset: 3px; }
+.pub-authors a.author:hover { color: var(--blue-ink); text-decoration-style: solid; }
 .pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .chip {
   font-size: 13px; font-weight: 500; line-height: 1; padding: 7px 12px; border-radius: var(--radius-sm);
@@ -326,13 +329,32 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.08; font-weight: 600;
 /* ---------- CV ---------- */
 .cv-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; }
 .timeline { list-style: none; margin: 0; padding: 0; }
-.timeline li { position: relative; padding: 0 0 24px 30px; display: flex; flex-direction: column; }
+.timeline li { position: relative; padding: 0 0 24px 30px; }
+/* One block per school: degrees on the left, one emblem centered vertically on the right */
+.tl-school { display: flex; align-items: center; gap: 16px; }
+.tl-school .timeline { flex: 1; min-width: 0; }
+.tl-school:not(:last-child) { padding-bottom: 24px; }
+/* keep the timeline line running from the last entry of one school to the next school */
+.tl-school:not(:last-child) .timeline li:last-child::after { display: block; bottom: -18px; }
+.tl-text { display: flex; flex-direction: column; min-width: 0; }
+/* School emblem, original colors, no background */
+.tl-logo {
+  flex: none; width: 72px; height: 72px;
+  display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 420px) { .tl-logo { width: 60px; height: 60px; } }
+/* Dark mode only: the dark-red round seal gets a light disc behind it, like a printed seal */
+:root[data-theme="dark"] .tl-logo img.seal { background: #EEF1F0; border-radius: 50%; padding: 3px; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tl-logo img.seal { background: #EEF1F0; border-radius: 50%; padding: 3px; }
+}
+.tl-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
 .timeline li::before {
   content: ""; position: absolute; left: 0; top: 7px; width: 12px; height: 12px;
   border-radius: 3px; background: var(--blue);
 }
-.timeline li:nth-child(2)::before { background: var(--green); }
-.timeline li:nth-child(n+3)::before { background: var(--gray); }
+.timeline li.m2::before { background: var(--green); }
+.timeline li.m3::before { background: var(--gray); }
 .timeline li::after { content: ""; position: absolute; left: 5px; top: 25px; bottom: 6px; width: 2px; background: var(--line); }
 .timeline li:last-child { padding-bottom: 0; }
 .timeline li:last-child::after { display: none; }
