@@ -266,7 +266,7 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.08; font-weight: 600;
 .media.cover img, .media.cover video { object-fit: cover; }
 /* "natural": keep the figure's own aspect ratio (for wide figures) */
 .media.natural { aspect-ratio: auto; background: transparent; border-radius: 0; }
-.media.natural img { height: auto; border-radius: 6px; }
+.media.natural img, .media.natural video { height: auto; border-radius: 6px; display: block; }
 /* Stacked project: figure on top, text below */
 .project-stacked { grid-template-columns: 1fr; gap: 20px; }
 .project-stacked .project-body p { max-width: 62em; }
